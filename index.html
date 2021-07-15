@@ -11,7 +11,31 @@
             // DOM title example
             // Event Handler Examples
         -->
+        <script>
+            //let dogName = 'Stark';
+            //console.log(dogName);
+
+            //console.log(window.location);
+            //window.alert('OMG SOMETHING HAPPENED');
+            //let response = window.confirm("Are you sure?");
+            //console.log('are they sure? ' + response);
+
+            //console.log(document.title);
+
+            function changeLucyTag() {
+                let lucyText = document.getElementById("lucy-text");
+                lucyText.innerText += "Adopted!"
+                lucyText.setAttribute("style", "background-color:red");
+            }
+
+            function handleOnMouseEnter(elementId) {
+                let myElement = document.getElementById(elementId);
+                myElement.setAttribute("style", "background-color:green;");
+            }
+
+        </script>
         <!-- Including JS file in HTML -->
+        <script src="simple-js.js"></script>
     </head>
     <body>
         <h1>Welcome To Our Pet Store</h1>
@@ -19,16 +43,36 @@
         <section>
             <img src="dog.jpeg" style="max-width: 300px;"/>
             <p id="arnold-text">Arnold</p>
-            <button id="arnold-button" class="pet-adopt-button">Adopt Me!</button>
+            <script>
+                //let element = document.getElementById("arnold-text");
+                //console.log(element);
+                //element.innerText += "!!!!!"
+                //element.innerHTML = "<h1>Arnold!</h1>"
+            </script>
+            <button 
+            onmouseover = "handleOnMouseEnter('arnold-button')"
+            id="arnold-button" class="pet-adopt-button">Adopt Me!</button>
             <!-- Event Listener Example -->
             <!-- DOM getElementById example -->
             <!-- DOM querySelector example -->
+            <script>
+                let arnoldAdoptBtn= document.querySelector(".pet-adopt-button");
+                arnoldAdoptBtn.addEventListener('click', function () {
+                    console.log('Hello');
+                    let arnoldText = document.getElementById("arnold-text");
+                    arnoldText.innerText += "ADOPTED!!"
+                    arnoldText.setAttribute("style", "background-color:red");
+                })
+            </script>
         </section>
         <br />
         <section>
             <img src="cat.png" style="max-width: 300px;"/>
             <p id="lucy-text">Lucy</p>
-            <button id="lucy-button" class="pet-adopt-button">Adopt Me!</button>
+            <button 
+                onclick = "changeLucyTag()"
+                id="lucy-button" 
+                class="pet-adopt-button">Adopt Me!</button>
         </section>
         <!-- DOM querySelectorAll example -->
     </body>
